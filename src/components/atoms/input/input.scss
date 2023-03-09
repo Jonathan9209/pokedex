@@ -1,0 +1,22 @@
+.input {
+  position: relative;
+  width: 160px;
+  height: 28px;
+
+  &__icon-left{
+    position: absolute;
+    top: 5px;
+    left:10px;
+    z-index: 100;
+  }
+
+
+  &--icon {
+    border: 1px solid gray;
+    width: 160px;
+    height: 28px;
+    border-radius: 1px;
+    text-align:center;
+
+  }
+}

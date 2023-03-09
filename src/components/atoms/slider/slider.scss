@@ -1,0 +1,16 @@
+.slider {
+  display: flex;
+  align-items: center;
+ 
+  &--range {
+    margin: 10px;
+    
+  }
+
+  &--name {
+    min-width: 60px;
+    margin-right: 10px;
+    text-align: end;
+  }
+
+}

@@ -1,0 +1,44 @@
+.button {
+    color: white; 
+    border: none;
+    border-radius: 2px;
+    font-size: 20px;
+    width: 120px; 
+    display: flex;
+    padding: 4px;
+    cursor: pointer;
+    
+    &--primary {
+
+        background-color: rgb(130, 123, 249);
+        width: 116px;
+        height: 40px;
+        padding-top: 10px;
+        padding-left: 8px;
+    }
+
+    &--secondary {
+        
+        background-color: rgb(130, 123, 249);
+        width: 136px;
+    }
+
+    &--icon {
+        color: blue;
+        width: 30px;    
+        background-color: white;
+    }
+
+
+    &--ornamentLeft {
+
+        padding-right: 50px;
+        color: aqua;  
+    }
+
+    &--disabled {
+    background-color: #9b94ea;
+    border-color: #9b94ea;
+}
+    
+}
