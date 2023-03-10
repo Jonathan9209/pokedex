@@ -11,6 +11,10 @@ import Input from "./components/atoms/input/input";
 import Slider from "./components/atoms/slider/slider";
 import SearchIcon from '@mui/icons-material/Search';
 import Label from "./components/atoms/label/label";
+import Table from "./components/molecules/table/table";
+
+
+
 
 
 function App() {
@@ -58,6 +62,7 @@ function App() {
       </div>
       <hr />
       <hr /> 
+      <Table elements={[]}></Table>
     </div>
   );
 }

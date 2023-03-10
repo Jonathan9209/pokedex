@@ -1,0 +1,42 @@
+.table{
+
+    table, td {
+        border: 2px solid;
+        color: rgb(126, 125, 125);
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        width: 150px;
+      }
+
+    th{
+        border: 1px solid;
+        color:black;
+        border-color: rgb(126, 125, 125);
+        background-color: rgb(255, 255, 255);
+    }
+      
+      table {
+
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      &__tableIcon {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      &--actions {
+        background:rgb(126, 125, 125);
+        padding: 20px;     
+        display: flex;
+        
+      }
+
+      &__icon{
+
+        border: 10px solid rgb(24, 18, 18);
+        display: flex;
+      }
+}
