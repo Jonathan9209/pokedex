@@ -23,7 +23,7 @@ describe("Input test", () => {
     render(<Input iconLeft/>);
 
     const input = screen.getByPlaceholderText("Text");
-    expect(input).toHaveClass("input--prueba");
+    expect(input).toHaveClass("input--icon");
   });
 
   it("Should render Input with value", () => {

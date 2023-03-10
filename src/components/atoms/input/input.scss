@@ -6,17 +6,17 @@
   &__icon-left{
     position: absolute;
     top: 5px;
-    left:10px;
+    left:8px;
     z-index: 100;
   }
 
 
   &--icon {
+    padding-left: 40px;
     border: 1px solid gray;
-    width: 160px;
+    width: 120px;
     height: 28px;
     border-radius: 1px;
-    text-align:center;
 
   }
 }

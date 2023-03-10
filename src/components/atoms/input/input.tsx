@@ -28,7 +28,7 @@ const Input: FC<InputProps> = ({
       {iconLeft && <div className="input__icon-left">{iconLeft}</div>}
 
       <input
-        className={`input input--${inputClasses}`}
+        className={`input ${inputClasses}`}
         onChange={handleOnChange}
         type="text"
         placeholder={placeholder}
