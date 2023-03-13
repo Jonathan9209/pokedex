@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./app.scss";
 import AddIcon from "@mui/icons-material/Add";
@@ -12,12 +12,20 @@ import Slider from "./components/atoms/slider/slider";
 import SearchIcon from '@mui/icons-material/Search';
 import Label from "./components/atoms/label/label";
 import Table from "./components/molecules/table/table";
+import Todo from "./components/organisms/page";
 
 
-
-
+interface PokemonType{
+  name: string;
+  image: string;
+  attack: number;
+  defense: number;
+}
 
 function App() {
+  
+  const [pokemons, setPokemons] = useState<PokemonType[]>([]);
+
   return (
     <div>
       <Button ornamentLeft={<AddIcon />} type="primary" onClick={() => {}}>
@@ -62,7 +70,16 @@ function App() {
       </div>
       <hr />
       <hr /> 
-      <Table elements={[]}></Table>
+      <Table rows={[]}></Table>
+      
+    <hr />
+    <hr />
+
+    <div>
+
+      <Todo pokemons={pokemons} handleChangePokemons={setPokemons}></Todo>
+    </div>
+
     </div>
   );
 }
