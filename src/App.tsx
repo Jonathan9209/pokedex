@@ -12,10 +12,11 @@ import Slider from "./components/atoms/slider/slider";
 import SearchIcon from '@mui/icons-material/Search';
 import Label from "./components/atoms/label/label";
 import Table from "./components/molecules/table/table";
-import Todo from "./components/organisms/page";
+import Page from "./components/organisms/page";
 
 
 interface PokemonType{
+  id: number;
   name: string;
   image: string;
   attack: number;
@@ -77,7 +78,7 @@ function App() {
 
     <div>
 
-      <Todo pokemons={pokemons} handleChangePokemons={setPokemons}></Todo>
+      <Page pokemons={pokemons} handleChangePokemons={setPokemons}></Page>
     </div>
 
     </div>

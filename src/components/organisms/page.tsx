@@ -12,6 +12,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Input from "../atoms/input/input";
 
 interface PokemonType {
+  id: number;
   name: string;
   image: string;
   attack: number;
@@ -19,20 +20,21 @@ interface PokemonType {
 }
 interface PageProps {
   pokemons: PokemonType[];
-  //setPokemons: React.Dispatch<React.SetStateAction<PokemonType[]>>
   handleChangePokemons: (newPokemons: PokemonType[]) => void;
 }
 
 const Page: FC<PageProps> = ({ pokemons, handleChangePokemons }) => {
+  const [id, setId] = useState<number>(0);
   const [name, setNombre] = useState<string>("");
   const [image, setImagen] = useState<string>("");
   const [attack, setAtaque] = useState<number>(0);
   const [defense, setDefensa] = useState<number>(0);
 
   function handleSubmit() {
-    if (name === "" || image === "") alert("Favor llenar todos los campos");
+    if (name === "" || image === "") alert("los campos deben ser completados");
 
     const newPokemon = {
+      id,
       name,
       image,
       attack,
@@ -40,7 +42,7 @@ const Page: FC<PageProps> = ({ pokemons, handleChangePokemons }) => {
     };
 
     handleChangePokemons([...pokemons, newPokemon]);
-    alert(`Pokemon ${newPokemon.name} agregado satisfactoriamente!`);
+    alert(`Pokemon ${newPokemon.name} agregado!`);
   }
 
   function handleCancel() {}
@@ -48,10 +50,10 @@ const Page: FC<PageProps> = ({ pokemons, handleChangePokemons }) => {
   function handleCreate(): void {}
 
   return (
-    <div className="todo">
-      <div className="todo--header">
+    <div className="page">
+      <div className="page--header">
         <Label name="Listado Pokemon"></Label>
-        <div className="todo--search">
+        <div className="page--search">
           <Input placeholder="Buscar" iconLeft={<SearchIcon />}></Input>
           <Button
             ornamentLeft={<AddIcon />}
@@ -61,22 +63,22 @@ const Page: FC<PageProps> = ({ pokemons, handleChangePokemons }) => {
             Nuevo
           </Button>
         </div>
-        <div className="todo--table">
-          <Table rows={[]} />
+        <div className="page--table">
+          <Table rows={pokemons}/>
         </div>
       </div>
-      <div className="todo--header">
+      <div className="page--header">
         <Label name="Nuevo Pokemon"></Label>
-        <div className="todo--searchnew">
-          <div className="todo--body">
-          <div className="todo--name">
-          <Label name="Nombre:"></Label>
-          </div>
-          <Input
-            placeholder="Nombre"
-            value={name}
-            onChange={(e) => setNombre(e)}
-          />
+        <div className="page--searchnew">
+            <div className="page--body">
+            <div className="page--name">
+              <Label name="Nombre:"></Label>
+            </div>
+            <Input
+              placeholder="Nombre"
+              value={name}
+              onChange={(e) => setNombre(e)}
+            />
           </div>
           <Slider
             min={0}
@@ -86,26 +88,26 @@ const Page: FC<PageProps> = ({ pokemons, handleChangePokemons }) => {
             name={"Ataque"}
           />
         </div>
-        <div className="todo--searchnew">
-          <div className="todo--body">
-            <div className="todo--name">
-          <Label name="Imagen:"></Label>
+        <div className="page--searchnew">
+          <div className="page--body">
+            <div className="page--name">
+              <Label name="Imagen:"></Label>
             </div>
-          <Input
-            placeholder="URL"
-            value={image}
-            onChange={(e) => setImagen(e)}
-          />
+            <Input
+              placeholder="URL"
+              value={image}
+              onChange={(e) => setImagen(e)}
+            />
           </div>
           <Slider
-            min={0}
+            min={0} 
             max={100}
             value={defense}
             name="Defensa"
             onChange={(e) => setDefensa(e)}
           />
         </div>
-        <div className="todo--searchnew">
+        <div className="page--searchnew">
           <Button
             ornamentLeft={<SaveIcon />}
             type="secondary"

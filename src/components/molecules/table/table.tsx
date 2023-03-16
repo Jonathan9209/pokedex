@@ -19,7 +19,6 @@ interface TableProps {
 
 const Table: FC<TableProps> = ({ rows }) => {
   return (
-    <div>
       <div className="table">
         <table>
           <tr>
@@ -40,11 +39,11 @@ const Table: FC<TableProps> = ({ rows }) => {
             </th>
           </tr>
           {rows?.map((pokemon)=>(
-          <tr>
-            <td>{pokemon.name}</td>
-            <td><img src={pokemon.image} alt="new pokemon image" width="90px" /></td>
-            <td>{`${pokemon.attack}`}</td>
-            <td>{`${pokemon.defense}`}</td>
+          <tr key={pokemon.id}>
+            <td key={pokemon.name}>{pokemon.name}</td>
+            <td key={pokemon.image}><img src={pokemon.image} alt="item pokemon"/></td>
+            <td key={pokemon.attack}>{`${pokemon.attack}`}</td>
+            <td key={pokemon.defense}>{`${pokemon.defense}`}</td>
             <td>
               <section className="table table--actions">
                 <div className="table__icon">
@@ -67,7 +66,6 @@ const Table: FC<TableProps> = ({ rows }) => {
          ))} 
         </table>
       </div>
-    </div>
   );
 };
 
