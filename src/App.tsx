@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./app.scss";
 import AddIcon from "@mui/icons-material/Add";
 import Button from "./components/atoms/button/button";
@@ -9,13 +8,14 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import Input from "./components/atoms/input/input";
 import Slider from "./components/atoms/slider/slider";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 import Label from "./components/atoms/label/label";
 import Table from "./components/molecules/table/table";
-import Page from "./components/organisms/page";
+import Page from "./components/pages/page";
 
 
-interface PokemonType{
+
+interface PokemonType {
   id: number;
   name: string;
   image: string;
@@ -24,7 +24,6 @@ interface PokemonType{
 }
 
 function App() {
-  
   const [pokemons, setPokemons] = useState<PokemonType[]>([]);
 
   return (
@@ -57,30 +56,31 @@ function App() {
         Guardar
       </Button>
       <div>
-         <Input placeholder={"url"}></Input>
+        <Input placeholder={"url"}></Input>
       </div>
       <div>
-        <Slider name={"Ataque"} min={0} max={100}></Slider>
-        <Slider name={"Defensa"} min={0} max={100}></Slider>
+        <Slider  min={0} max={100} ></Slider>
+        <Slider  min={0} max={100} ></Slider>
       </div>
       <div>
         <Input placeholder="Buscar" iconLeft={<SearchIcon />}></Input>
       </div>
       <div>
-        <p><Label name={"Nombre"}></Label></p>
+        <p>
+          <Label name={"Nombre"}></Label>
+        </p>
       </div>
       <hr />
-      <hr /> 
-      <Table rows={[]}></Table>
-      
-    <hr />
-    <hr />
+      <hr />
+      <hr />
+      <hr />
+      <Table data={[]}></Table>
+      <hr />
+      <hr />
 
-    <div>
-
-      <Page pokemons={pokemons} handleChangePokemons={setPokemons}></Page>
-    </div>
-
+      <div>
+        <Page pokemons={pokemons} handleChangePokemons={setPokemons}></Page>
+      </div>
     </div>
   );
 }

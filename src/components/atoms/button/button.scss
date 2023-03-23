@@ -5,7 +5,8 @@
     font-size: 20px;
     width: 120px; 
     display: flex;
-    padding: 4px;
+    justify-content:space-around;
+    padding: 8px;
     cursor: pointer;
     
     &--primary {

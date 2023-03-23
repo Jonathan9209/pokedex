@@ -1,42 +1,38 @@
-.table{
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    table, td {
-        border: 2px solid;
-        color: rgb(126, 125, 125);
-        background-color: rgb(255, 255, 255);
-        text-align: center;
-        width: 150px;
-      }
+  &__element {
+    border: 2px solid;
+    color: rgb(126, 125, 125);
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    text-align: center;
+    width: 150px;
+    width: 100%;
+    border-collapse: collapse;
+  }
 
-    th{
-        border: 1px solid;
-        color:black;
-        border-color: rgb(126, 125, 125);
-        background-color: rgb(255, 255, 255);
-    }
-      
-      table {
+  &__colum {
+    border: 2px solid;
+    color: rgb(126, 125, 125);
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    text-align: center;
+    width: 150px;
+  }
 
-        width: 100%;
-        border-collapse: collapse;
-      }
+  &__colum-header {
+    border: 2px solid;
+    color: black;
+    border-color: rgb(126, 125, 125);
+    background-color: rgb(255, 255, 255);
+  }
 
-      &__tableIcon {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
-
-      &--actions {
-        background:rgb(126, 125, 125);
-        padding: 20px;     
-        display: flex;
-        
-      }
-
-      &__icon{
-
-        border: 10px solid rgb(24, 18, 18);
-        display: flex;
-      }
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  } 
 }

@@ -1,16 +1,13 @@
 .slider {
-  display: flex;
-  align-items: center;
- 
+
+   display: flex;
+   justify-content: space-between;
+    
   &--range {
-    margin: 10px;
+    color: aqua;
+    
     
   }
 
-  &--name {
-    min-width: 60px;
-    margin-right: 10px;
-    text-align: end;
-  }
 
 }

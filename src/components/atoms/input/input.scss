@@ -11,12 +11,18 @@
   }
 
 
+  &--placeholder {
+
+    margin-left: 200px;
+  }
+
   &--icon {
     padding-left: 40px;
     border: 1px solid gray;
     width: 120px;
     height: 28px;
     border-radius: 1px;
+    padding-left: 40px;
 
   }
 }

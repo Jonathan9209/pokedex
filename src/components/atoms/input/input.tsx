@@ -4,7 +4,7 @@ import "./input.scss";
 interface InputProps {
   placeholder?: string;
   value?: string;
-  onChange?: (text: string) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   iconLeft?: ReactNode;
 }
 
@@ -17,11 +17,8 @@ const Input: FC<InputProps> = ({
 
   let inputClasses = "input";
   if (iconLeft) inputClasses += " input--icon";
+  if (placeholder) inputClasses += " input--placeholder;" 
 
-  const handleOnChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    const text = e.target.value;
-    onChange?.(text);
-  };
 
   return (
     <div className="input">
@@ -29,7 +26,7 @@ const Input: FC<InputProps> = ({
 
       <input
         className={`input ${inputClasses}`}
-        onChange={handleOnChange}
+        onChange={onChange}
         type="text"
         placeholder={placeholder}
         value={value}
